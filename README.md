@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+### Goal
+This project is the frontend web application of the project `Be Hero`. The complement repositoies are following bellow:
+  - [backend application] (https://github.com/joaofanchini/be-hero-backend.git)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
