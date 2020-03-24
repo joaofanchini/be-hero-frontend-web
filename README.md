@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ### Goal
-This project is the frontend web application of the project `Be Hero`. The complement repositoies are following bellow:
+This project is the frontend web application of the project `Be Hero`. The complement repositories are following bellow:
   - [backend application](https://github.com/joaofanchini/be-hero-backend.git)
 
 
