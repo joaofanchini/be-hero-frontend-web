@@ -8,6 +8,10 @@ import heroesImage from '../../assets/heroes.png';
 import branchImage from '../../assets/logo.svg';
 import { FiLogIn } from 'react-icons/fi';
 
+// Objeto necessário para ter o comportamento de SPA, que é o de não recarregar todo o conteúdo, e sim só o necessário do virtual
+// No comportamento de SPA, ele não recarrega a página, apenas subtitui os elementos da mesma
+import { Link } from 'react-router-dom';
+
 // No React, devemos usar a propriedade class name para colcoar classe nos elementos
 
 export default function Logon() {
@@ -22,9 +26,9 @@ export default function Logon() {
             Entrar
           </button>
 
-          <a href='/register'>
+          <Link className='back-link' to='/register'>
             <FiLogIn size={16} color='#E02041' /> Registrar
-          </a>
+          </Link>
         </form>
       </section>
 
