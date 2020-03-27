@@ -1,9 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-pacotes:
+### Packages:
 
 - react-icons (Para icones do react -> São sempre svgs)
 - react-router-dom (Para lidar com as rotas da aplicação)
+
+### Goal
+
+This project is the frontend web application of the project `Be Hero`. The complement repositories are following bellow:
+
+- [backend application](https://github.com/joaofanchini/be-hero-backend.git)
 
 ## Available Scripts
 
