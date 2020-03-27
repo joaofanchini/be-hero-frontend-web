@@ -1,4 +1,4 @@
-import React from 'react'; // Variáveis sempre com letra maiuscula
+import React, { useState } from 'react'; // Variáveis sempre com letra maiuscula
 
 /**
  * Quando for ter o comportamento como container, basta recever as variáveis
@@ -18,10 +18,18 @@ import React from 'react'; // Variáveis sempre com letra maiuscula
  */
 
 export default function Header({ title, children }) {
+  let [counter, setCounter] = useState(0); // Valor incial da vaŕiavel é passdo
+
+  function increment() {
+    setCounter(counter + 1);
+  }
   return (
     <header>
       <h1>{title}</h1>
       {children}
+
+      <p>{counter}</p>
+      <button onClick={increment}>Incrementar</button>
     </header>
   );
 }
