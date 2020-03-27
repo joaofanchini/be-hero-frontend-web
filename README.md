@@ -1,6 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-pacotes: react-icons
+pacotes:
+
+- react-icons (Para icones do react -> São sempre svgs)
+- react-router-dom (Para lidar com as rotas da aplicação)
 
 ## Available Scripts
 

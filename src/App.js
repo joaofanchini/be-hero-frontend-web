@@ -1,10 +1,10 @@
 import React from 'react'; // Necessário importar em todas os scripts esse import do react
 
-import Logon from './pages/Logon';
+import Routes from './routes';
 import './global-style.css';
 
 function App() {
-  return <Logon></Logon>;
+  return <Routes />;
   // tag HTML retornada pelo JavaScript é chamada de JSX (JavaScript XML Syntax
 }
 
