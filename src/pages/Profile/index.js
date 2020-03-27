@@ -12,7 +12,7 @@ export default function Profile() {
         <img src={branchImage} alt='Logo image' />
         <span>Bem vindo ONG</span>
 
-        <Link className='button' to='/incidentes/new'>
+        <Link className='button' to='/new-incident'>
           Cadastrar novo caso
         </Link>
 

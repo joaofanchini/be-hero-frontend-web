@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Logon from './pages/Logon';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
+import NewIncident from './pages/NewIncident';
 /**
  * Com o Routes, passamos a configurar as rotas da nossa aplicação por aqui
  * e então colocamos este componente para ser renderizado no App.js, pois ele component
@@ -21,6 +22,7 @@ export default function Routes() {
         <Route path='/' exact component={Logon} />
         <Route path='/register' component={Register} />
         <Route path='/profile' component={Profile} />
+        <Route path='/new-incident' component={NewIncident} />
       </Switch>
     </BrowserRouter>
   );
