@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import branchImage from '../../assets/logo.svg';
 
 import { FiPower, FiTrash2 } from 'react-icons/fi';
 import api from '../../services/api';
 
 export default function Profile() {
+  const history = useHistory();
+
   const nameOng = localStorage.getItem('nameOng');
   const idOng = sessionStorage.getItem('idOng');
 
@@ -27,7 +29,7 @@ export default function Profile() {
         console.log(error);
         alert('Erro ao efetuar consulta de perfis');
       });
-  }, idOng);
+  }, [idOng]);
 
   /**
    * Sempre que for retornar uma JSX, é necessário abrir os () e colocar o return,
@@ -41,6 +43,32 @@ export default function Profile() {
    * PS: Com React, sempre que for fazer uma listagem, é necessário adicionar o identificador
    * único à aquela linha (li), e com React, fazemos isso através do atributo 'key'
    */
+
+  function logout() {
+    localStorage.clear();
+    sessionStorage.clear();
+    history.push('/');
+  }
+
+  function deleteIncident(event, incidentId) {
+    event.preventDefault();
+    console.log(incidentId);
+    api
+      .delete(`/incident/${incidentId}`, {
+        headers: {
+          Authorization: idOng
+        }
+      })
+      .then(response => {
+        console.log(response);
+        alert(`Caso (${incidentId}) deletado`);
+        setIncident(incident.filter(i => i.id !== incidentId));
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
   return (
     <div className='profile-container'>
       <header>
@@ -52,7 +80,7 @@ export default function Profile() {
         </Link>
 
         <button type='button'>
-          <FiPower size={18} color='#E02041' />
+          <FiPower size={18} color='#E02041' onClick={logout} />
         </button>
       </header>
 
@@ -75,7 +103,11 @@ export default function Profile() {
             </p>
 
             <button type='button'>
-              <FiTrash2 size={18} color='#a8a8b3' />
+              <FiTrash2
+                size={18}
+                color='#a8a8b3'
+                onClick={event => deleteIncident(event, i.id)}
+              />
             </button>
           </li>
         ))}

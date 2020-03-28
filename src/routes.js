@@ -15,10 +15,10 @@ import NewIncident from './pages/NewIncident';
 
 // Com exact fazemos com que a rota seja identificada pelo caminho todo, e nao apenas um pedaço dela
 export default function Routes() {
+  // Faz com que seja possível chamar 1 rota por vez
   return (
     <BrowserRouter>
       <Switch>
-        // Faz com que seja possível chamar 1 rota por vez
         <Route path='/' exact component={Logon} />
         <Route path='/register' component={Register} />
         <Route path='/profile' component={Profile} />
